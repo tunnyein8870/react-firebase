@@ -1,4 +1,4 @@
-import { getDocs, collection, doc } from "firebase/firestore";
+import { getDocs, collection } from "firebase/firestore";
 import { db } from "../../config/firebase";
 import { useEffect, useState } from "react";
 import { Post } from "./post";
@@ -24,10 +24,10 @@ export const Main = () => {
 
   useEffect(() => {
     getPost();
-  }, []);
+    }, []);
 
   return (
-    <div>
+    <div className="bg-gradient-to-t from-gray-100 to-gray-200 hover:to-gray-300">
       <h1>{postList?.map((post) => (
         <Post post={post} />
       ))}
